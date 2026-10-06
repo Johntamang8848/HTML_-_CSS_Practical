@@ -95,10 +95,8 @@ html-css-assignment/
 
 ## 8. Challenges and Solutions
 
-> Replace these with problems you really faced. Keep them only if they match your experience.
-
-1. **Keeping all cards the same height. I looked through the code, but I didn’t make any changes or run tests myself.
-2. **The sticky navbar covered section headings when using anchor links.** [TODO: describe in your own words. In my code the fix was `scroll-padding-top` on `html`.]
+1. Keeping all cards the same height: I didn’t make changes or test a fix myself, so I can’t describe this as a challenge I solved.
+2. The sticky navbar covered section headings when using anchor links: I learned that adding scroll-padding-top to the HTML element leaves space above a section when navigating to it, so the heading isn’t hidden behind the navbar.
 
 ## 9. AI Usage Disclosure
 
