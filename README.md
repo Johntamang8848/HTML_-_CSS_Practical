@@ -56,7 +56,7 @@ html-css-assignment/
 |-----|----------|---------------|----------------|------------------|
 | 1 | Class lecture notes | HTML structure | How to organize a page with elements such as headings, sections, and links | I used these elements to build the navigation bar and page content |
 | 2 | University course materials | CSS layout and styling | How colours, spacing, and alignment affect a page’s appearance | I used CSS to style the navigation bar and arrange the cards |
-| 3 | YouTube tutorial on HTML and CSS (add the title and channel you watched) | Building a card layout | How to create cards and arrange them on a page | I used the approach to create and position the card layout |
+| 3 | YouTube tutorial on HTML and CSS by Apna college | Building a card layout | How to create cards and arrange them on a page | I used the approach to create and position the card layout |
 | 4 | MDN Web Docs: CSS `display` | CSS layout | How display properties control how elements appear and align | I used CSS display rules to arrange the page elements |
 
 ## 6. Screenshots
