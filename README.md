@@ -6,7 +6,7 @@
 |---|---|
 | **Name** | John Tamang |
 | **Student ID** | 2602412477 |
-| **Course / Module** | BSc Software Engineering |
+| **Course / Module** | BSc Hons Software Engineering |
 | **Level** | 4 |
 | **Assignment title** | HTML & CSS Practical Assignment: Building a Navigation Bar and Responsive Card Layout |
 
