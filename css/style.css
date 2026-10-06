@@ -1,0 +1,260 @@
+/* ================= 1. Tokens + reset ================= */
+:root {
+  --nav-bg: #14213d;
+  --nav-text: #e8ecf4;
+  --navy: #14213d;
+  --accent: #2ec4b6;
+  --accent-dark: #1f9c90;
+  --text: #3d4659;
+  --muted: #6b7489;
+  --surface: #ffffff;
+  --page-bg: #f4f6fb;
+  --nav-height: 64px;
+  --max-width: 1100px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height); /* sticky bar won't cover section headings */
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  line-height: 1.5;
+  background: var(--page-bg);
+  color: var(--text);
+}
+
+/* Reusable centred container used by every section */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ================= 2. Navigation bar (Part A) ================= */
+.site-header {
+  background-color: var(--nav-bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: var(--nav-height);
+}
+.brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--nav-text);
+  text-decoration: none;
+}
+.brand span { color: var(--accent); }
+
+.nav-links { list-style: none; display: flex; gap: 8px; }
+.nav-links a {
+  display: block;
+  padding: 8px 16px;
+  color: var(--nav-text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 6px;
+  border-bottom: 2px solid transparent;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+.nav-links a.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: var(--nav-text);
+  font-size: 1.4rem;
+  padding: 4px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ================= 3. Main intro section ================= */
+.intro {
+  padding: 80px 0 64px;
+}
+.intro h1 {
+  max-width: 18ch;           /* keeps the headline from stretching too wide */
+  font-size: 3rem;
+  line-height: 1.1;
+  color: var(--navy);
+}
+.intro p {
+  max-width: 60ch;           /* ~60 characters per line is comfortable to read */
+  margin-top: 20px;
+  font-size: 1.15rem;
+}
+.intro-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+/* ================= 4. Cards section (Parts B + C) ================= */
+.courses { padding: 24px 0 80px; }
+.section-header { margin-bottom: 32px; }
+.section-header h2 { font-size: 2rem; color: var(--navy); }
+.section-header p { margin-top: 4px; color: var(--muted); }
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--surface);
+  border: 1px solid #e1e6f0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(20, 33, 61, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(20, 33, 61, 0.18);
+}
+.card-image { aspect-ratio: 17 / 9; overflow: hidden; }
+.card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.card:hover .card-image img { transform: scale(1.05); }
+
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+}
+.tag {
+  align-self: flex-start;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-dark);
+  background-color: rgba(46, 196, 182, 0.14);
+  border-radius: 999px;
+}
+.card-title { font-size: 1.25rem; line-height: 1.25; color: var(--navy); }
+.card-text { font-size: 0.95rem; }
+.card-meta {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid #e1e6f0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* Buttons shared by the intro and the cards */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--navy);
+  border: 2px solid var(--navy);
+  border-radius: 8px;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+.btn:hover, .btn:focus-visible {
+  background-color: var(--accent-dark);
+  border-color: var(--accent-dark);
+}
+/* Defined after .btn:hover so the secondary hover wins on equal specificity */
+.btn-secondary { background-color: transparent; color: var(--navy); }
+.btn-secondary:hover, .btn-secondary:focus-visible {
+  background-color: var(--navy);
+  border-color: var(--navy);
+  color: #ffffff;
+}
+
+/* ================= 5. Footer ================= */
+.site-footer {
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+  padding: 48px 0 24px;
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+.footer-about { max-width: 34ch; }
+.footer-about p { margin-top: 8px; font-size: 0.95rem; color: #aab4cc; }
+
+.footer-col h4 { font-size: 1rem; margin-bottom: 12px; color: #ffffff; }
+.footer-col ul { list-style: none; }
+.footer-col li + li { margin-top: 6px; }
+.footer-col a, .footer-col address {
+  color: #aab4cc;
+  font-size: 0.95rem;
+  font-style: normal;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-col a:hover, .footer-col a:focus-visible { color: var(--accent); }
+
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.85rem;
+  color: #aab4cc;
+}
+
+/* ================= 6. Responsive ================= */
+@media (max-width: 900px) {
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+  .intro h1 { font-size: 2.5rem; }
+}
+
+@media (max-width: 720px) {
+  .navbar { flex-wrap: wrap; }
+  .menu-toggle { display: block; }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 12px;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 12px 16px; }
+}
+
+@media (max-width: 600px) {
+  .container { padding: 0 16px; }
+  .card-grid { grid-template-columns: 1fr; }
+  .intro { padding: 56px 0 40px; }
+  .intro h1 { font-size: 2rem; }
+  .intro p { font-size: 1.05rem; }
+}

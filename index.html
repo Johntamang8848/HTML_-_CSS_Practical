@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CodeLab – Learn to build for the web</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- ============ HEADER + NAVIGATION ============ -->
+  <header class="site-header" id="top">
+    <div class="container">
+      <nav class="navbar" aria-label="Main navigation">
+        <a href="#top" class="brand">Code<span>Lab</span></a>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+          &#9776;
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#top" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ MAIN INTRO ============ -->
+    <section class="intro" id="about">
+      <div class="container">
+        <h1>Learn to build for the web, one project at a time</h1>
+        <p>
+          CodeLab offers short, practical courses for beginners and students.
+          Each course ends with something you have built yourself, so you learn
+          the concepts by using them.
+        </p>
+        <div class="intro-actions">
+          <a href="#courses" class="btn">Browse courses</a>
+          <a href="#contact" class="btn btn-secondary">Contact us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CARD SECTION ============ -->
+    <section class="courses" id="courses" aria-labelledby="courses-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="courses-heading">Popular courses</h2>
+          <p>Practical, project-based courses for new developers.</p>
+        </div>
+
+        <div class="card-grid">
+
+        <article class="card">
+          <div class="card-image">
+            <img alt="Illustration for the HTML and CSS Foundations course" src="images/web-development.svg">
+          </div>
+          <div class="card-body">
+            <span class="tag">Web Development</span>
+            <h3 class="card-title">HTML &amp; CSS Foundations</h3>
+            <p class="card-text">Learn HTML, CSS and JavaScript through practical projects.</p>
+            <div class="card-meta"><span>Beginner</span><span>8 Weeks</span></div>
+            <a href="#" class="btn">View course</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-image">
+            <img alt="Illustration for the Python for Beginners course" src="images/python-beginners.svg">
+          </div>
+          <div class="card-body">
+            <span class="tag">Programming</span>
+            <h3 class="card-title">Python for Beginners</h3>
+            <p class="card-text">Write your first programs and solve small problems with clean, readable Python.</p>
+            <div class="card-meta"><span>Beginner</span><span>6 Weeks</span></div>
+            <a href="#" class="btn">View course</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-image">
+            <img alt="Illustration for the SQL and Data Modelling course" src="images/sql-data-modelling.svg">
+          </div>
+          <div class="card-body">
+            <span class="tag">Databases</span>
+            <h3 class="card-title">SQL and Data Modelling</h3>
+            <p class="card-text">Design tables, write queries and connect a database to a simple application.</p>
+            <div class="card-meta"><span>Intermediate</span><span>7 Weeks</span></div>
+            <a href="#" class="btn">View course</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-image">
+            <img alt="Illustration for the Git and Team Workflow course" src="images/git-workflow.svg">
+          </div>
+          <div class="card-body">
+            <span class="tag">Software Engineering</span>
+            <h3 class="card-title">Git and Team Workflow</h3>
+            <p class="card-text">Use branches, pull requests and code reviews the way real teams do.</p>
+            <div class="card-meta"><span>Beginner</span><span>4 Weeks</span></div>
+            <a href="#" class="btn">View course</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-image">
+            <img alt="Illustration for the Responsive Web Design course" src="images/responsive-design.svg">
+          </div>
+          <div class="card-body">
+            <span class="tag">Web Development</span>
+            <h3 class="card-title">Responsive Web Design</h3>
+            <p class="card-text">Build layouts that adapt to phones, tablets and desktops using Flexbox and Grid.</p>
+            <div class="card-meta"><span>Intermediate</span><span>6 Weeks</span></div>
+            <a href="#" class="btn">View course</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-image">
+            <img alt="Illustration for the Data Structures in Practice course" src="images/data-structures.svg">
+          </div>
+          <div class="card-body">
+            <span class="tag">Computer Science</span>
+            <h3 class="card-title">Data Structures in Practice</h3>
+            <p class="card-text">Work with lists, stacks, queues and trees, and learn when to use each one.</p>
+            <div class="card-meta"><span>Advanced</span><span>10 Weeks</span></div>
+            <a href="#" class="btn">View course</a>
+          </div>
+        </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-about">
+          <a href="#top" class="brand">Code<span>Lab</span></a>
+          <p>Practical web development and programming courses for students and beginners.</p>
+        </div>
+
+        <nav class="footer-col" aria-label="Footer navigation">
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="#top">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <address>
+            <a href="mailto:hello@codelab.example">hello@codelab.example</a>
+          </address>
+        </div>
+      </div>
+
+      <p class="footer-bottom">&copy; 2026 CodeLab. Student project for HTML and CSS practice.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

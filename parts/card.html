@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Card Component – Part B</title>
+
+  <style>
+    /* Same design tokens as the navbar, so both parts look like one website */
+    :root {
+      --navy: #14213d;
+      --accent: #2ec4b6;
+      --accent-dark: #1f9c90;
+      --text: #3d4659;
+      --muted: #6b7489;
+      --surface: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+      line-height: 1.5;
+      background: #f4f6fb;
+      color: var(--text);
+      min-height: 100vh;
+      display: grid;            /* quick way to centre the demo card */
+      place-items: center;
+      padding: 24px;
+    }
+
+    /* ---------- Card container ----------
+       The card is a flex column: image on top, content below.
+       overflow: hidden clips the image to the rounded corners. */
+    .card {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 340px;
+      background-color: var(--surface);
+      border: 1px solid #e1e6f0;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(20, 33, 61, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    /* Hover effect: card lifts and the shadow grows */
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 28px rgba(20, 33, 61, 0.18);
+    }
+
+    /* ---------- Image ----------
+       The wrapper has a fixed height; object-fit: cover fills it without
+       stretching the picture. */
+    .card-image {
+      height: 180px;
+      overflow: hidden;
+    }
+    .card-image img {
+      display: block;           /* removes the small gap under inline images */
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .card:hover .card-image img {
+      transform: scale(1.05);   /* subtle zoom, clipped by overflow: hidden */
+    }
+
+    /* ---------- Content ---------- */
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 20px;
+    }
+
+    /* Category tag: inline-block so padding works, but it only is as wide as its text.
+       align-self stops the flex column from stretching it full width. */
+    .tag {
+      align-self: flex-start;
+      padding: 4px 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent-dark);
+      background-color: rgba(46, 196, 182, 0.14);
+      border-radius: 999px;     /* very large radius = pill shape */
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      line-height: 1.25;
+      color: var(--navy);
+    }
+
+    .card-text {
+      font-size: 0.95rem;
+    }
+
+    /* Extra information row: level on the left, duration on the right */
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 12px;
+      border-top: 1px solid #e1e6f0;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* ---------- Button ---------- */
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 600;
+      color: #ffffff;
+      background-color: var(--navy);
+      border-radius: 8px;
+      transition: background-color 0.2s;
+    }
+    .btn:hover,
+    .btn:focus-visible {
+      background-color: var(--accent-dark);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <article> is used because a card is a self-contained piece of content
+       that would still make sense on its own. -->
+  <article class="card">
+    <div class="card-image">
+      <!-- Placeholder picture (inline SVG). Replace src with your own image file,
+           e.g. src="images/web-dev.jpg", and keep a meaningful alt text. -->
+      <img alt="Code editor window showing HTML tags"
+           src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 340 180'><rect width='340' height='180' fill='%2314213d'/><rect x='40' y='28' width='260' height='124' rx='10' fill='%231d2f57'/><circle cx='58' cy='46' r='5' fill='%23ff6b6b'/><circle cx='76' cy='46' r='5' fill='%23ffd166'/><circle cx='94' cy='46' r='5' fill='%232ec4b6'/><rect x='62' y='70' width='90' height='8' rx='4' fill='%232ec4b6'/><rect x='80' y='88' width='140' height='8' rx='4' fill='%23e8ecf4'/><rect x='80' y='106' width='110' height='8' rx='4' fill='%236b7aa6'/><rect x='62' y='124' width='60' height='8' rx='4' fill='%232ec4b6'/></svg>">
+    </div>
+
+    <div class="card-body">
+      <span class="tag">Web Development</span>
+      <h2 class="card-title">HTML &amp; CSS Foundations</h2>
+      <p class="card-text">Learn HTML, CSS and JavaScript through practical projects.</p>
+
+      <div class="card-meta">
+        <span>Beginner</span>
+        <span>8 Weeks</span>
+      </div>
+
+      <a href="#" class="btn">View course</a>
+    </div>
+  </article>
+</body>
+</html>

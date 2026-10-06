@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Without this tag, phones pretend to be ~980px wide and media queries never fire -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Navigation Bar – Part A</title>
+
+  <style>
+    /* ---------- 1. Design tokens (CSS variables) ----------
+       Defined once on :root so colours/spacing can be changed in one place. */
+    :root {
+      --nav-bg: #14213d;       /* deep navy background */
+      --nav-text: #e8ecf4;     /* soft off-white text */
+      --accent: #2ec4b6;       /* teal used for hover/active states */
+      --nav-height: 64px;
+    }
+
+    /* ---------- 2. Reset ----------
+       Browsers add default margins/padding. box-sizing: border-box makes
+       width include padding + border, so sizes are easier to predict. */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+      line-height: 1.5;
+      background: #f4f6fb;
+      color: #14213d;
+    }
+
+    /* ---------- 3. Header + container ---------- */
+    .site-header {
+      background-color: var(--nav-bg);
+      position: sticky;        /* stays at the top while scrolling */
+      top: 0;
+    }
+
+    /* Flexbox: brand on the left, links on the right.
+       justify-content works on the main (horizontal) axis,
+       align-items on the cross (vertical) axis. */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;          /* centres the bar horizontally */
+      padding: 0 24px;
+      min-height: var(--nav-height);
+    }
+
+    /* ---------- 4. Brand ---------- */
+    .brand {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--nav-text);
+      text-decoration: none;
+    }
+    .brand span {
+      color: var(--accent);    /* span lets us colour part of the name */
+    }
+
+    /* ---------- 5. Links ---------- */
+    .nav-links {
+      list-style: none;        /* remove bullet points from <ul> */
+      display: flex;           /* <li> items sit in a row */
+      gap: 8px;                /* spacing between items, no margin hacks */
+    }
+
+    .nav-links a {
+      display: block;          /* so padding makes the whole area clickable */
+      padding: 8px 16px;
+      color: var(--nav-text);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border-radius: 6px;
+      border-bottom: 2px solid transparent; /* reserved space, so hover doesn't shift layout */
+      transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+    }
+
+    /* Hover + keyboard focus (so the bar works without a mouse) */
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      background-color: rgba(255, 255, 255, 0.08);
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* Marks the page you are currently on */
+    .nav-links a.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* Menu button is hidden on large screens */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: var(--nav-text);
+      font-size: 1.4rem;
+      padding: 4px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* ---------- 6. Responsive behaviour ----------
+       Below 720px: show the button, stack the links vertically,
+       and hide them until the button is pressed. */
+    @media (max-width: 720px) {
+      .navbar {
+        flex-wrap: wrap;       /* lets the link list drop to a new line */
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding-bottom: 12px;
+      }
+      .nav-links.open {
+        display: flex;         /* JS adds the "open" class */
+      }
+      .nav-links a {
+        padding: 12px 16px;
+      }
+    }
+
+    /* Demo content so you can see the sticky behaviour */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      min-height: 120vh;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <header> = introductory area of the page; <nav> = a block of navigation links.
+       Semantic tags tell browsers, search engines and screen readers what each
+       part is. A screen reader can jump straight to <nav>; a bare <div> says nothing. -->
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="#" class="brand">Code<span>Lab</span></a>
+
+      <button class="menu-toggle" id="menuToggle"
+              aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        &#9776;
+      </button>
+
+      <!-- A navigation menu is a list of links, so <ul>/<li> is the right structure -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Page content goes here</h1>
+    <p>Scroll down and resize the window to test the sticky bar and the mobile menu.</p>
+  </main>
+
+  <script>
+    // Toggles the "open" class on the link list when the button is clicked.
+    const toggle = document.getElementById("menuToggle");
+    const links = document.getElementById("navLinks");
+
+    toggle.addEventListener("click", () => {
+      const isOpen = links.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", isOpen); // keeps screen readers informed
+    });
+  </script>
+</body>
+</html>
