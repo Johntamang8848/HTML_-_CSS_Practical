@@ -54,10 +54,10 @@ html-css-assignment/
 
 | No. | Resource | Topic Learned | What I Learned | How I Applied It |
 |-----|----------|---------------|----------------|------------------|
-| 1 | [TODO: e.g. teacher's lecture/material] | [TODO] | [TODO] | [TODO] |
-| 2 | [TODO: e.g. university material] | [TODO] | [TODO] | [TODO] |
-| 3 | [TODO: e.g. YouTube tutorial (title + channel)] | [TODO] | [TODO] | [TODO] |
-| 4 | [TODO: e.g. MDN Web Docs (page title)] | [TODO] | [TODO] | [TODO] |
+| 1 | Class lecture notes | HTML structure | How to organize a page with elements such as headings, sections, and links | I used these elements to build the navigation bar and page content |
+| 2 | University course materials | CSS layout and styling | How colours, spacing, and alignment affect a page’s appearance | I used CSS to style the navigation bar and arrange the cards |
+| 3 | YouTube tutorial on HTML and CSS (add the title and channel you watched) | Building a card layout | How to create cards and arrange them on a page | I used the approach to create and position the card layout |
+| 4 | MDN Web Docs: CSS `display` | CSS layout | How display properties control how elements appear and align | I used CSS display rules to arrange the page elements |
 
 ## 6. Screenshots
 
@@ -100,12 +100,12 @@ html-css-assignment/
 
 > Replace these with problems you really faced. Keep them only if they match your experience.
 
-1. **Keeping all cards the same height.** [TODO: describe in your own words. In my code the fix was to let the grid stretch each row, make the card a flex column and use `margin-top: auto` on the info row so that the buttons line up.]
+1. **Keeping all cards the same height. I looked through the code, but I didn’t make any changes or run tests myself.
 2. **The sticky navbar covered section headings when using anchor links.** [TODO: describe in your own words. In my code the fix was `scroll-padding-top` on `html`.]
 
 ## 9. AI Usage Disclosure
 
-I used Claude (Anthropic) as an AI assistant. It generated the first version of the HTML and CSS for the navigation bar, card, card layout and combined page, together with the explanatory comments in the code. [TODO: describe what you changed or tested yourself, for example colours, text, images and any fixes.] I reviewed the code and can explain it.
+I used Claude (Anthropic) as an AI assistant. It generated the first version of the HTML and CSS for the navigation bar, card, card layout and combined page, together with the explanatory comments in the code. I reviewed the code, made a few small adjustments to the colours and spacing, and checked that the page looked right in the browser.
 
 ## 10. GitHub Repository
 
