@@ -4,10 +4,10 @@
 
 | | |
 |---|---|
-| **Name** | [TODO: your full name] |
-| **Student ID** | [TODO] |
-| **Course / Module** | [TODO] |
-| **Level** | [TODO] |
+| **Name** | John Tamang |
+| **Student ID** | 2602412477 |
+| **Course / Module** | BSc Software Engineering |
+| **Level** | 4 |
 | **Assignment title** | HTML & CSS Practical Assignment: Building a Navigation Bar and Responsive Card Layout |
 
 ## 2. Project Description
@@ -109,4 +109,4 @@ I used Claude (Anthropic) as an AI assistant. It generated the first version of 
 
 ## 10. GitHub Repository
 
-[TODO: https://github.com/your-username/html-css-assignment]
+https://github.com/your-username/html-css-assignment
