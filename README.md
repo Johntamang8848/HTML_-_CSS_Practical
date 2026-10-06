@@ -70,9 +70,6 @@ html-css-assignment/
 ### Card Layout
 ![Card Layout](screenshots/card-layout.png)
 
-### Responsive Design
-![Responsive Design](screenshots/responsive-design.png)
-
 ### Complete Page
 ![Complete Page](screenshots/full-page.png)
 
